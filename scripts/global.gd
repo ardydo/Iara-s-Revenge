@@ -1,6 +1,8 @@
 extends Node
 var a = (256*4)
 var b = (224*4)
+var next = false
+var nextLevel = ""
 
 func _get_big():
 	OS.set_window_size(Vector2(b, a))
@@ -15,5 +17,9 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("escape"):
+	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+	if event.is_action_pressed("ui_accept"):
+		if next:
+			next = false
+			get_tree().change_scene(nextLevel)
