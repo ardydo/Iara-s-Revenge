@@ -23,3 +23,7 @@ func _input(event):
 		if next:
 			next = false
 			get_tree().change_scene(nextLevel)
+
+func _scene_changer(scene):
+	global.next = true
+	global.nextLevel = scene
