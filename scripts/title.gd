@@ -1,8 +1,4 @@
 extends Control
 
-
-
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	global._scene_changer("res://stage1.tnsc")
