@@ -16,8 +16,7 @@ func _fixed_process(delta):
 	#moves
 	if autoMoves and active:
 		set_pos(Vector2(get_pos().x + (dir * speed), get_pos().y))
-	#cleanup
-	
+
 func activate():
 	active = true
 	# print("aloalo")
