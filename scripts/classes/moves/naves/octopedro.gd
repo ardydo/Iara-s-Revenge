@@ -7,6 +7,7 @@ var shooting = false
 func _init():
 	shootCD = 0.5
 	maxHealth = 5
+	invulAble = true
 	
 func _ready():
 	speed = 2

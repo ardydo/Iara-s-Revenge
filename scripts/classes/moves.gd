@@ -11,6 +11,11 @@ var dir = 1
 var active = false
 var useless = false
 export var autoMoves = true
+# invul vars
+var invul = false
+var invulAble = false
+var invulDur = 1.5
+var invulTimer = Timer.new()
 
 func _fixed_process(delta):
 	#moves
@@ -28,9 +33,15 @@ func deactivate():
 		queue_free()
 
 func damage(a):
-	health -= a
-	if health <= 0:
-		destroy()
+	if not invul:
+		invul = true
+		health -= a
+		if health <= 0:
+			destroy()
+		if invulAble:
+			invulTimer.start()
+func invul_timeout():
+	invul = false
 
 func destroy():
 	queue_free()
@@ -48,4 +59,9 @@ func _ready():
 	visible.connect("enter_screen", self, "activate")
 	visible.connect("exit_screen", self, "deactivate")
 	connect("area_enter", self, "collides")
+	# invulnerability timer
+	add_child(invulTimer)
+	invulTimer.set_wait_time(invulDur)
+	invulTimer.set_one_shot(true)
+	invulTimer.connect("timeout", self, "invul_timeout")
 	health = maxHealth
