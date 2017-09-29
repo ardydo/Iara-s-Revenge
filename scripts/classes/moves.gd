@@ -46,8 +46,6 @@ func damage(a):
 		if invulAble:
 			invulTimer.start()
 			invulSwitchTimer.start()
-	else:
-		print("pristine!")
 
 func invul_timeout():
 	sprite.set_self_opacity(1)
