@@ -32,7 +32,7 @@ func _process(delta):
 		shoot()
 
 func _ready():
-	#timer config
+	# shoot timer config
 	shootTimer.set_one_shot(true)
 	shootTimer.set_wait_time(shootCD)
 	shootTimer.connect("timeout", self, "shoot_timer_over")

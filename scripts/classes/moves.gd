@@ -2,20 +2,24 @@ extends Area2D
 # required nodes
 # visibility2d called visible
 
-var maxHealth = 1
-var health = maxHealth
-
+#general vars
 export var alinhamento = 1
 var speed = 1
 var dir = 1
 var active = false
 var useless = false
 export var autoMoves = true
+
+#health vars
+var maxHealth = 1
+var health = maxHealth
+
 # invul vars
 var invul = false
 var invulAble = false
 var invulDur = 1.5
 var invulTimer = Timer.new()
+
 
 func _fixed_process(delta):
 	#moves
@@ -49,7 +53,6 @@ func destroy():
 func collides(thing):
 	if thing.alinhamento != alinhamento:
 		damage(thing.shootPow)
-		print("aiai")
 
 func _ready():
 	set_fixed_process(true)
@@ -58,10 +61,15 @@ func _ready():
 	var visible = get_node("Visible")
 	visible.connect("enter_screen", self, "activate")
 	visible.connect("exit_screen", self, "deactivate")
+	
+	# collision connections
 	connect("area_enter", self, "collides")
+	
 	# invulnerability timer
 	add_child(invulTimer)
 	invulTimer.set_wait_time(invulDur)
 	invulTimer.set_one_shot(true)
 	invulTimer.connect("timeout", self, "invul_timeout")
+	
+	#other inits
 	health = maxHealth

@@ -27,17 +27,9 @@ autoMoves = true
 
 texture = ExtResource( 2 )
 
-[node name="collision" type="CollisionPolygon2D" parent="."]
-
-transform/pos = Vector2( -16.4018, 0.170515 )
-build_mode = 0
-polygon = Vector2Array( 8.14563, -2.42568, 8.37181, 7.7793, 19.0286, 7.89187, 14.753, -2.50041 )
-shape_range = Vector2( 0, 0 )
-trigger = false
-
 [node name="shootFrom" type="Position2D" parent="."]
 
-transform/pos = Vector2( 5, 2.23168 )
+transform/pos = Vector2( 13, 2.23168 )
 transform/scale = Vector2( 0.306516, 0.306516 )
 
 [node name="Visible" type="VisibilityNotifier2D" parent="."]
@@ -50,5 +42,13 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( -16.4018, 0.170515 )
+build_mode = 0
+polygon = Vector2Array( 8.14563, -2.42568, 8.37181, 7.7793, 19.0286, 7.89187, 14.753, -2.50041 )
+shape_range = Vector2( 0, 0 )
+trigger = false
 
 
