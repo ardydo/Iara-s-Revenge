@@ -5,6 +5,7 @@ var pos
 var shooting = false
 
 func _init():
+	shootCD = 0.5
 	maxHealth = 5
 	
 func _ready():
@@ -13,7 +14,6 @@ func _ready():
 	set_process_input(true)
 	autoMoves = false
 	shootAuto = false
-	shootCD = 0.5
 
 func _input(event):
 	shooting = Input.is_action_pressed("ui_accept")

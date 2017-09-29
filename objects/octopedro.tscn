@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 points = Vector2Array( 14.753, -2.50041, 19.0286, 7.89187, 8.37181, 7.7793, 8.14563, -2.42568 )
 
-[node name="ship" type="Area2D"]
+[node name="octopedro" type="Area2D"]
 
 transform/pos = Vector2( 0.55462, -1.11646 )
 input/pickable = true
