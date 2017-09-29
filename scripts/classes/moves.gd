@@ -2,6 +2,9 @@ extends Area2D
 # required nodes
 # visibility2d called visible
 
+var maxHealth = 1
+var health = maxHealth
+
 export var alinhamento = 1
 var speed = 1
 var dir = 1
@@ -25,8 +28,18 @@ func deactivate():
 		# print("morri!" + str(self))
 		queue_free()
 
+func damage(a):
+	health -= a
+	if health <= 0:
+		destroy()
+
 func destroy():
 	queue_free()
+
+func collides(thing):
+	if thing.alinhamento != alinhamento:
+		damage(thing.shootPow)
+		print("aiai")
 
 func _ready():
 	set_fixed_process(true)
@@ -35,3 +48,5 @@ func _ready():
 	var visible = get_node("Visible")
 	visible.connect("enter_screen", self, "activate")
 	visible.connect("exit_screen", self, "deactivate")
+	connect("area_enter", self, "collides")
+	health = maxHealth
