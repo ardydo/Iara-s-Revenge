@@ -1,22 +1,33 @@
 extends Area2D
+# required nodes
+# visibility2d called visible
 
-var speed = 16
+var speed = 1
+var dir = 1
 var active = false
 var useless = false
+export var autoMoves = true
 
 func _fixed_process(delta):
-	var motion = Vector2()
-	var pos = get_pos()
-	pos += motion*delta*speed
-	set_pos(pos)
+	#moves
+	if autoMoves:
+		set_pos(Vector2(get_pos().x + (dir * speed), get_pos().y))
+	#cleanup
 	
-func _on_visibility_enter_screen():
+func activate():
 	active = true
+	print("aloalo")
 
-func _on_visibility_exit_screen():
+func deactivate():
 	useless = true
 	if useless and active:
+		print("morri!" + str(self))
 		queue_free()
 
 func _ready():
 	set_fixed_process(true)
+	
+	#visibility connections
+	var visible = get_node("Visible")
+	visible.connect("enter_screen", self, "activate")
+	visible.connect("exit_screen", self, "deactivate")
