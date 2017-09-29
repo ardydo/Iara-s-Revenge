@@ -9,6 +9,7 @@ var dir = 1
 var active = false
 var useless = false
 export var autoMoves = true
+onready var sprite = get_node("Sprite")
 
 #health vars
 var maxHealth = 1
@@ -19,7 +20,7 @@ var invul = false
 var invulAble = false
 var invulDur = 1.5
 var invulTimer = Timer.new()
-
+var invulSwitchTimer = Timer.new()
 
 func _fixed_process(delta):
 	#moves
@@ -44,8 +45,14 @@ func damage(a):
 			destroy()
 		if invulAble:
 			invulTimer.start()
+			invulSwitchTimer.start()
+	else:
+		print("pristine!")
+
 func invul_timeout():
+	sprite.set_self_opacity(1)
 	invul = false
+	invulSwitchTimer.stop()
 
 func destroy():
 	queue_free()
@@ -53,6 +60,14 @@ func destroy():
 func collides(thing):
 	if thing.alinhamento != alinhamento:
 		damage(thing.shootPow)
+		
+func flash():
+	# print("SPARKLE!")
+	var a = sprite.get_self_opacity()
+	if a == 1:
+		sprite.set_self_opacity(0.40)
+	else:
+		sprite.set_self_opacity(1)
 
 func _ready():
 	set_fixed_process(true)
@@ -70,6 +85,9 @@ func _ready():
 	invulTimer.set_wait_time(invulDur)
 	invulTimer.set_one_shot(true)
 	invulTimer.connect("timeout", self, "invul_timeout")
+	add_child(invulSwitchTimer)
+	invulSwitchTimer.set_wait_time(0.10)
+	invulSwitchTimer.connect("timeout", self, "flash")
 	
 	#other inits
 	health = maxHealth
