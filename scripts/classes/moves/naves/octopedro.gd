@@ -4,7 +4,9 @@ var movimento = Vector2()
 var pos
 var shooting = false
 
-
+func _init():
+	maxHealth = 5
+	
 func _ready():
 	speed = 2
 	alinhamento = 0
@@ -33,16 +35,21 @@ func _fixed_process(delta):
 	#movendo
 	pos = get_pos()
 	pos += movimento * speed
-	set_pos(pos)
 	#mantendo dentro da tela
-	var screen_size = OS.get_window_size()
+	var screen_size = Vector2(Globals.get("display/width"),Globals.get("display/height"))
+	var margin = 9
+	var a = margin
+	var b = screen_size.x - margin
+	var c = screen_size.y - margin
 	
-	if (pos.x < 0):
-		pos.x = 0
-	if (pos.x > screen_size.x):
-		pos.x = screen_size.x
-	if (pos.y < 0):
-		pos.y = 0
-	if (pos.y > screen_size.y):
-		pos.y = screen_size.y
+	if (pos.x < a):
+		pos.x = a
+	if (pos.x > b):
+		pos.x = b
+	if (pos.y < a):
+		pos.y = a
+	if (pos.y > c):
+		pos.y = c
 	
+	
+	set_pos(pos)
