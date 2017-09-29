@@ -18,6 +18,7 @@ func shoot():
 		bullet.set_pos(get_node("shootFrom").get_global_pos())
 		bullet.shootPow = shootPow
 		bullet.alinhamento = alinhamento
+		bullet.dir = dir
 		get_parent().add_child(bullet)
 		
 		shootTimer.start()
