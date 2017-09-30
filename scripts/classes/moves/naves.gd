@@ -10,6 +10,7 @@ var shootCD = 1
 var shootAble = true
 var shootAuto = true #auto shoot var
 onready var shootTimer = get_node("shootTimer")
+var shootSpeed = 2
 
 func shoot():
 	if shootAble:
@@ -19,6 +20,7 @@ func shoot():
 		bullet.shootPow = shootPow
 		bullet.alinhamento = alinhamento
 		bullet.dir = dir
+		bullet.speed = shootSpeed
 		get_parent().add_child(bullet)
 		
 		shootTimer.start()
