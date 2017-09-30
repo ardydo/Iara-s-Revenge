@@ -1,12 +1,11 @@
 extends Area2D
 
 func collides(thing):
-	print(thing)
+	# print(thing)
 	if "guard" in thing:
 		if thing.guard:
-			thing.autoMoves = false
-			thing.follow = true
-			print(thing.follow)
+			if "go" in thing:
+				thing.go = true
 
 func _ready():
 	connect("area_enter", self, "collides")
