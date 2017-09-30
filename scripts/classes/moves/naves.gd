@@ -22,10 +22,10 @@ func shoot():
 		get_parent().add_child(bullet)
 		
 		shootTimer.start()
-		print(shootTimer.get_wait_time())
+		# print(shootTimer.get_wait_time())
 
 func shoot_timer_over():
-	print("carregado!")
+	# print("carregado!")
 	shootAble = true
 
 func _process(delta):
