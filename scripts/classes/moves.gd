@@ -56,9 +56,10 @@ func destroy():
 	queue_free()
 
 func collides(thing):
-	if thing.alinhamento != alinhamento:
-		damage(thing.shootPow)
-		
+	if "alinhamento" in thing:
+		if thing.alinhamento != alinhamento:
+			damage(thing.shootPow)
+
 func flash():
 	# print("SPARKLE!")
 	var a = sprite.get_self_opacity()
