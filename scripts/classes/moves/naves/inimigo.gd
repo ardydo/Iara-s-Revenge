@@ -1,6 +1,10 @@
 extends "res://scripts/classes/moves/naves.gd"
 var go = false
 
+# substitute vars
+var substitute = false
+var subThing = preload ("res://objects/enemies/enemy_def.tscn")
+
 # guard vars
 var guard = false
 var follow = false
@@ -10,6 +14,16 @@ onready var followTarget = get_node("../stage/octopedro")
 
 # shooter vars
 var shooter = false
+
+func destroy():
+	if substitute:
+		print("sub!")
+		var sub = subThing.instance()
+		get_parent().add_child(sub)
+		print(sub)
+		sub.set_pos(get_global_pos())
+		
+	queue_free()
 
 func _fixed_process(delta):
 	if follow:
