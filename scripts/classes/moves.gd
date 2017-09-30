@@ -34,11 +34,11 @@ func deactivate():
 
 func damage(a):
 	if not invul:
-		invul = true
 		health -= a
 		if health <= 0:
 			destroy()
 		if invulAble:
+			invul = true
 			invulTimer.start()
 func invul_timeout():
 	invul = false
