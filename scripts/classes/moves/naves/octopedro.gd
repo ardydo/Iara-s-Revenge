@@ -1,5 +1,7 @@
 extends "res://scripts/classes/moves/naves.gd"
 
+onready var healthBar = get_node("../ui/health_bar")
+
 var movimento = Vector2()
 var pos
 var shooting = false
@@ -9,12 +11,6 @@ func _init():
 	maxHealth = 5
 	invulAble = true
 	
-func _ready():
-	speed = 2
-	alinhamento = 0
-	set_process_input(true)
-	autoMoves = false
-	shootAuto = false
 
 func _input(event):
 	shooting = Input.is_action_pressed("ui_accept")
@@ -52,5 +48,18 @@ func _fixed_process(delta):
 	if (pos.y > c):
 		pos.y = c
 	
-	
 	set_pos(pos)
+	
+func damage(a):
+	.damage(a)
+	healthBar.set_health(health)
+
+func _ready():
+	speed = 2
+	alinhamento = 0
+	set_process_input(true)
+	autoMoves = false
+	shootAuto = false
+	
+	# health stuff
+	healthBar.setup(maxHealth, health)
