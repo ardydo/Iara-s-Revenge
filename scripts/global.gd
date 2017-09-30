@@ -15,6 +15,7 @@ func _ready():
 	_get_big()
 	_spaceBg()
 	set_process_input(true)
+	randomize()
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
