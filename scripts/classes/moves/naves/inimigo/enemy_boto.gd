@@ -14,4 +14,4 @@ func _process(delta):
 func _ready():
 	shooter = true
 	substitute = true
-	subThing = preload ("res://objects/enemies/enemy_pasquin.tscn")
+	subThing = preload ("res://objects/enemies/enemy_pasquim.tscn")
