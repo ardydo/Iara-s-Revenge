@@ -3,12 +3,12 @@ extends Area2D
 # visibility2d called visible
 
 #general vars
-export var alinhamento = 1
+var alinhamento = 1
 var speed = 1
 var dir = 1
 var active = false
 var useless = false
-export var autoMoves = true
+var autoMoves = true
 onready var sprite = get_node("Sprite")
 
 #health vars
