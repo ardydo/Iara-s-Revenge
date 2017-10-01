@@ -68,5 +68,8 @@ func _ready():
 	shootAuto = false
 	score = 0
 	
+	shootAmmo = preload( "res://objects/projectiles/bubble.tscn")
+	print(shootAmmo)
+	
 	# health stuff
 	healthBar.setup(maxHealth, health)
