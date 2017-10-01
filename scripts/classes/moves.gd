@@ -10,6 +10,7 @@ var active = false
 var useless = false
 var autoMoves = true
 onready var sprite = get_node("Sprite")
+var bala = false
 
 # score vars
 var scoreable = false
@@ -69,6 +70,7 @@ func collides(thing):
 	if "alinhamento" in thing:
 		if thing.alinhamento != alinhamento:
 			damage(thing.shootPow)
+			thing.damage(self.shootPow)
 
 func flash():
 	# print("SPARKLE!")

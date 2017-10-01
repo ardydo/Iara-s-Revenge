@@ -3,6 +3,9 @@ var shootPow = 0
 
 func _ready():
 	score = 0
+	bala = true
+
+func collides(thing):
 	pass
 
 func _fixed_process(delta):
