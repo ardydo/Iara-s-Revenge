@@ -1,6 +1,7 @@
 extends "res://scripts/classes/moves/naves.gd"
 
 onready var healthBar = get_node("../ui/health_bar")
+onready var gameover = get_node("../ui")
 
 var movimento = Vector2()
 var pos
@@ -55,6 +56,7 @@ func damage(a):
 	healthBar.set_health(health)
 
 func destroy():
+	gameover.over = true
 	global.game_over()
 	.destroy()
 

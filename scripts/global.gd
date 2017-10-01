@@ -55,6 +55,7 @@ func score(value):
 func game_over():
 	if score > high_score:
 		save_score(score)
+	global._scene_changer("res://title.tscn")
 
 func _ready():
 	_get_big()
