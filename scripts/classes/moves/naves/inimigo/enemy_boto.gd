@@ -1,7 +1,7 @@
 extends "res://scripts/classes/moves/naves/inimigo.gd"
 
 func _init():
-	shootCD = 1.5
+	shootCD = 1.7
 	shootSpeed = 0.5
 
 func _process(delta):

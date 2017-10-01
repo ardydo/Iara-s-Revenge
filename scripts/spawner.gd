@@ -5,8 +5,8 @@ var x
 var y
 
 var timer = Timer.new()
-var timerMin = 0.25
-var timerMax = 2.0
+var timerMin = 1.0
+var timerMax = 4.0
 
 
 onready var enemyList = [ 

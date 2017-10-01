@@ -211,5 +211,9 @@ transform/pos = Vector2( 25.7013, 107.254 )
 
 transform/pos = Vector2( 270.735, 30 )
 
+[node name="spawner1" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 270.735, 30 )
+
 
 [editable path="ui/health_bar"]

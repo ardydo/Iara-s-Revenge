@@ -32,3 +32,4 @@ func _ready():
 	
 	# assign the texture
 	get_node("Sprite").set_texture(spritePick)
+	shootAmmo = preload("res://objects/projectiles/generic_bullet.tscn")
