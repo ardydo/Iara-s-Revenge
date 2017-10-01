@@ -4,7 +4,7 @@
 [ext_resource path="res://bg.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui and stuff/fontBIG.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://scripts/centralizer.gd" type="Script" id=4]
-[ext_resource path="res://assets/ui and stuff/font.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://start.tscn" type="PackedScene" id=5]
 
 [node name="Control" type="Control"]
 
@@ -41,24 +41,6 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 4 )
 
-[node name="start" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 177.0
-margin/right = 254.0
-margin/bottom = 210.0
-custom_fonts/font = ExtResource( 5 )
-text = "Press Space"
-align = 1
-valign = 1
-uppercase = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script/script = ExtResource( 4 )
+[node name="start" parent="." instance=ExtResource( 5 )]
 
 

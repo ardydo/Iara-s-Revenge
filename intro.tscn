@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://bg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui and stuff/font.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://scripts/intro.gd" type="Script" id=3]
+[ext_resource path="res://start.tscn" type="PackedScene" id=4]
 
 [node name="intro_control" type="Control"]
 
@@ -36,5 +37,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 3 )
+
+[node name="start" parent="." instance=ExtResource( 4 )]
+
+margin/top = 187.0
+margin/bottom = 220.0
 
 
