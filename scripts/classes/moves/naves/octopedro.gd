@@ -54,12 +54,17 @@ func damage(a):
 	.damage(a)
 	healthBar.set_health(health)
 
+func destroy():
+	global.game_over()
+	.destroy()
+
 func _ready():
 	speed = 2
 	alinhamento = 0
 	set_process_input(true)
 	autoMoves = false
 	shootAuto = false
+	score = 0
 	
 	# health stuff
 	healthBar.setup(maxHealth, health)

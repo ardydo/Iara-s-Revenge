@@ -2,6 +2,7 @@ extends "res://scripts/classes/moves.gd"
 var shootPow = 0
 
 func _ready():
+	score = 0
 	pass
 
 func _fixed_process(delta):

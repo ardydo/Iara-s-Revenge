@@ -11,6 +11,10 @@ var useless = false
 var autoMoves = true
 onready var sprite = get_node("Sprite")
 
+# score vars
+var scoreable = false
+var score = 100
+
 #health vars
 var maxHealth = 1
 var health = maxHealth
@@ -41,6 +45,7 @@ func damage(a):
 	if not invul:
 		health -= a
 		if health <= 0:
+			scoreable = true
 			destroy()
 		if invulAble:
 			invul = true
@@ -52,7 +57,12 @@ func invul_timeout():
 	invul = false
 	invulSwitchTimer.stop()
 
+func score():
+	if scoreable:
+		global.score(score)
+
 func destroy():
+	score()
 	queue_free()
 
 func collides(thing):

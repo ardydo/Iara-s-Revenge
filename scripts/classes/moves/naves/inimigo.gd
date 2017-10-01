@@ -16,6 +16,7 @@ onready var followTarget = get_node("../stage/octopedro")
 var shooter = false
 
 func destroy():
+	score()
 	if substitute:
 		print("sub!")
 		var sub = subThing.instance()
