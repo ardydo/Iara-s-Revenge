@@ -10,7 +10,7 @@ var guard = false
 var follow = false
 var followQuick = false
 var followSpeed = 0.5
-onready var followTarget = get_node("../stage/octopedro")
+onready var followTarget = get_node("../octopedro")
 
 # shooter vars
 var shooter = false

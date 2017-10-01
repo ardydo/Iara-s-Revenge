@@ -38,7 +38,7 @@ func activate():
 func deactivate():
 	useless = true
 	if useless and active:
-		# print("morri!" + str(self))
+		# print("morri!" + str(get_name()))
 		queue_free()
 
 func damage(a):
