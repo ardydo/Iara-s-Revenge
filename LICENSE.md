@@ -1,16 +1,3 @@
-## Licensing
-
-### Code
-
-All code are distributed under the MIT LicenseLICENSE.md
-
-### Assets
-
-Unless mentioned otherwise, all art assets (files in assets/ and Resources/) are distributed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
-
-Artist: André Andrade
-
-
 ## MIT License
 
 Copyright (c) 2017 André Andrade
@@ -32,3 +19,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+### Code
+
+All code are distributed under the MIT LicenseLICENSE.md
+
+### Assets
+
+Unless mentioned otherwise, all art assets (files in assets/ and Resources/) are distributed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+Artist: André Andrade
