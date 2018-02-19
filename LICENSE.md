@@ -22,7 +22,7 @@ SOFTWARE.
 
 ### Code
 
-All code are distributed under the MIT LicenseLICENSE.md
+All code are distributed under the MIT License
 
 ### Assets
 
