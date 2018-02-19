@@ -26,6 +26,6 @@ All code are distributed under the MIT License
 
 ### Assets
 
-Unless mentioned otherwise, all art assets (files in assets/ and Resources/) are distributed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+Unless mentioned otherwise, all art assets (files in assets/) are distributed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 Artist: André Andrade
